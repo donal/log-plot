@@ -6,11 +6,12 @@ require 'optparse'
 options = {
   period: 300,
   output: "plot.png",
+  log_type: :access,
   verbose: false
 }
 
 parser = OptionParser.new do |opts|
-  opts.banner = "Usage: log-plot [-op] log_file"
+  opts.banner = "Usage: log-plot [-opt] log_file"
 
   opts.separator ""
   opts.separator "Specific options:"
@@ -27,6 +28,11 @@ parser = OptionParser.new do |opts|
   opts.on("-o", "--output OUTPUT",
           "Filename of outputted plot") do |output|
     options[:output] = output
+  end
+
+  opts.on("-t", "--type TYPE", [:access, :error],
+          "Log type (access, error)") do |log_type|
+    options[:log_type] = log_type
   end
 
   opts.on_tail("-h", "--help", "Show this message") do
