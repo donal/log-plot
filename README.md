@@ -17,12 +17,13 @@ system.
 ## Usage
 
 ```
-Usage: log-plot [-op] log_file
+Usage: log-plot [-opt] log_file
 
 Specific options:
     -p, --period PERIOD              Specify requests per period for plotting
                                        from 1 to 3600 seconds
     -o, --output OUTPUT              Filename of outputted plot
+    -t, --type TYPE                  Log type (access, error)
     -h, --help                       Show this message
     -V, --version                    Show version
 ```
